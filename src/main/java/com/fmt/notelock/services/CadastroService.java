@@ -7,6 +7,7 @@ import com.fmt.notelock.datasource.repositories.CadastroRepository;
 import com.fmt.notelock.infra.exceptions.CadastroNotFoundException;
 import com.fmt.notelock.interfaces.CadastroInterface;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -17,10 +18,15 @@ import java.util.stream.Collectors;
 public class CadastroService implements CadastroInterface {
 
     private final CadastroRepository cadastroRepository;
+    private final LoginService loginService;
 
     @Autowired
-    public CadastroService(CadastroRepository cadastroRepository) {
+    public CadastroService(
+            CadastroRepository cadastroRepository,
+            LoginService loginService
+    ) {
         this.cadastroRepository = cadastroRepository;
+        this.loginService = loginService;
     }
 
     @Override
@@ -59,6 +65,10 @@ public class CadastroService implements CadastroInterface {
     public CadastroEntity buscarCadastroPorId(Long id) {
         return cadastroRepository.findById(id).orElseThrow(
                 () -> new CadastroNotFoundException("Id do Cadastro não encontrado: " + id));
+    }
+
+    public CadastroEntity buscarCadastroPorLogin(String login) {
+        return (CadastroEntity) loginService.loadUserByUsername(login);
     }
 
 }
