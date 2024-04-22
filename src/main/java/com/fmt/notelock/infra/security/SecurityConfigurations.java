@@ -35,14 +35,14 @@ public class SecurityConfigurations {
                         .requestMatchers(HttpMethod.DELETE, "/cadastro/{id}").hasRole("ADMIN")
 
 
-                        .requestMatchers(HttpMethod.POST, "/cadernos").hasAnyRole("ADMIN", "USUARIO")
-                        .requestMatchers(HttpMethod.GET, "/cadernos").hasAnyRole("ADMIN", "USUARIO")
+                        .requestMatchers(HttpMethod.POST, "/cadernos").hasAnyRole("ADMIN")
+                        .requestMatchers(HttpMethod.GET, "/cadernos").hasAnyRole("ADMIN")
                         .requestMatchers(HttpMethod.GET, "/cadernos/{id}").hasAnyRole("ADMIN", "USUARIO")
                         .requestMatchers(HttpMethod.PUT, "/cadernos/{id}").hasAnyRole("ADMIN", "USUARIO")
                         .requestMatchers(HttpMethod.DELETE, "/cadernos/{id}").hasRole("ADMIN")
 
-                        .requestMatchers(HttpMethod.POST, "/notas").hasAnyRole("ADMIN", "USUARIO")
-                        .requestMatchers(HttpMethod.GET, "/notas").hasAnyRole("ADMIN", "USUARIO")
+                        .requestMatchers(HttpMethod.POST, "/notas").hasAnyRole("ADMIN")
+                        .requestMatchers(HttpMethod.GET, "/notas").hasAnyRole("ADMIN")
                         .requestMatchers(HttpMethod.GET, "/notas/{id}").hasAnyRole("ADMIN", "USUARIO")
                         .requestMatchers(HttpMethod.PUT, "/notas/{id}").hasAnyRole("ADMIN", "USUARIO")
                         .requestMatchers(HttpMethod.DELETE, "/notas/{id}").hasRole("ADMIN")

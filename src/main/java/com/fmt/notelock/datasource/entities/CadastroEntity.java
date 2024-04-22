@@ -38,9 +38,14 @@ public class CadastroEntity implements UserDetails {
 
         if (papel.equals(PapelEnum.ADMIN.toString())) {
             return List.of(new SimpleGrantedAuthority("ROLE_ADMIN"), new SimpleGrantedAuthority("ROLE_USER"));
-        } else {
-            return List.of(new SimpleGrantedAuthority("ROLE_USER"));
         }
+
+        if (papel.equals(PapelEnum.USUARIO.toString())){
+            return List.of(new SimpleGrantedAuthority("ROLE_USUARIO"));
+        }
+
+        return Collections.singleton(new SimpleGrantedAuthority("ROLE_USER"));
+
     }
 
     @Override
