@@ -2,13 +2,11 @@ package com.fmt.notelock.controllers;
 
 
 import com.fmt.notelock.controllers.dtos.requests.RequestCadernoDTO;
-import com.fmt.notelock.controllers.dtos.responses.ResponseCadastroDTO;
 import com.fmt.notelock.controllers.dtos.responses.ResponseCadernoDTO;
 import com.fmt.notelock.datasource.entities.CadastroEntity;
 import com.fmt.notelock.datasource.entities.CadernoEntity;
 import com.fmt.notelock.infra.exceptions.CadastroNotFoundException;
 import com.fmt.notelock.infra.exceptions.CadernoNotFoundException;
-import com.fmt.notelock.infra.exceptions.CadastroNotFoundException;
 
 import com.fmt.notelock.infra.exceptions.UnauthorizedAccessException;
 import com.fmt.notelock.services.CadastroService;
