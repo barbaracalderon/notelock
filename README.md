@@ -1,6 +1,5 @@
 # Notelock - API REST com Autenticação JWT
 
-## Visão Geral
 Notelock é uma API RESTful construída com Spring Boot que utiliza Tokens de Web JSON (JWT) para autenticação. Ela fornece endpoints para gerenciar recursos como Cadernos e Notas, sendo seus dados persistidos em banco de dados PostgreSQL. A principal intenção desta API é demonstrar os processos de autenticação e segurança com o uso de JWT.
 
 
